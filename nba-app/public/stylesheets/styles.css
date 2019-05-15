@@ -1,0 +1,19 @@
+.container {
+  padding-top: 30px;
+}
+
+.cards-container {
+  display: flex;
+  padding: 10% 20%;
+  justify-content: space-around;
+}
+
+.cards-container img, .card img {
+    object-fit: cover;
+    height: 100px;
+    object-position: center;
+}
+ .card img {
+   object-position: top;
+   width: 100%;
+ }

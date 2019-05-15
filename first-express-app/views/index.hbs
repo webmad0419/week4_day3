@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My first view</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <h1>¡Hola {{name}}!</h1>
+    <p>Bienvenid@ a {{{bootcamp}}}!!</p>
+
+    <hr>
+
+    {{#if finishDate}}
+    <p>¡Oh! Terminaste tu bootcamp el {{finishDate}}</p>
+    {{else}}
+    <p>¡Oh! Aún estás cursando el {{{bootcamp}}}</p>
+    {{/if}}
+
+    <hr>
+
+    {{#unless address}}
+    <p>Importante: accede a tu perfil para actualizar tu dirección.</p>
+    {{/unless}}
+
+    <hr>
+
+    <p>A continuación te listamos los módulos de {{{bootcamp}}}:</p>
+    <ul>
+        {{#each modules}}
+        <li>Módulo número {{@index}}: {{this}}</li>
+        {{else}}
+        <p>Módulos no disponibles aún...</p>
+        {{/each}}
+    </ul>
+
+
+
+    <hr>
+
+    <ul>
+        {{#each modules}}
+
+        {{#if @first}}
+        <li><b>{{this}}</b></li>
+        {{else if @last}}
+        <li><i>{{this}}</i></li>
+        {{else}}
+        <li>{{this}}</li>
+        {{/if}}
+
+        {{/each}}
+    </ul>
+
+
+    <hr>
+
+    <p>Suscripción activa:</p>
+    {{#with subscription}}
+    Nombre: {{name}} <br>
+    Precio: {{cost}} € <br>
+    Periodicidad: {{regularity}}
+    {{/with}}
+
+</body>
+
+</html>
